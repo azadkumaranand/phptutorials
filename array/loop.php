@@ -23,4 +23,14 @@ while($a<10){
     echo $a;//this $a will not print 8
 }
 
+//do while loop
+//do while loop code execute at least once even condition is wrong
+$a = 1;
+do{
+    echo "do while loop ";
+}while($a<1);
+
+
+
+
 ?>
