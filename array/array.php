@@ -144,4 +144,73 @@ echo "<pre>";
 print_r(array_combine($students, $age));
 echo "</pre>";
 
+//array_map('functionName', $arrayName)
+
+$arrayName = [456, "abdc", 75.26, "azad", 36, "Khushi", 45];
+echo count($arrayName)."<br>";
+
+function funName($e){
+    $x = 5;
+    echo "Hello array map $e<br>";
+}
+
+for($i=0;$i<count($arrayName);$i++){
+    echo $arrayName[$i]." ";
+}
+
+echo "<br>";
+
+array_map('funName', $arrayName);
+
+array_map(function($eele){
+    echo $eele." ";
+}, $arrayName);
+
+//array_merge($arr1, $arr2, ...)
+$arr1 = [];
+$arr2 = [];
+$arr3 = [];
+for ($i=0; $i < 10; $i++) { 
+   array_push($arr1, $i);
+   array_push($arr2, $i*5);
+   array_push($arr3, $i*10);
+}
+echo "<br>";
+print_r($arr3);
+echo "<br>";
+echo "<pre>";
+print_r(array_merge($arr1, $arr2, $arr3));
+echo "</pre>";
+
+//array_rand($arrayName, size);
+$array = [];
+for ($i=0; $i < 10; $i++) { 
+    $GLOBALS['array'];
+    // $GLOBALS['array'] and $array is same
+    array_push($GLOBALS['array'], "Ramesh$i");
+ }
+ echo "<pre>";
+print_r($array);
+echo "</pre>";
+
+$rand_array = array_rand($array, 3);
+echo "<pre>";
+print_r($rand_array);
+echo "</pre>";
+
+echo "<pre>";
+print_r($array[$rand_array[0]]);
+echo "</pre>";
+
+//access all random elements from parent array
+for($i=0;$i<count($rand_array);$i++){
+    echo $array[$rand_array[$i]]." ";
+}
+echo "<br>";
+array_map(function($e){
+    // global $array;
+    // echo $array[$e]." ";
+    echo $GLOBALS['array'][$e];
+}, $rand_array);
+
 ?>
