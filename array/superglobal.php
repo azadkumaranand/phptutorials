@@ -40,10 +40,39 @@ echo "</pre>";
 //how can i upload files to our desired locations
 
 $target_dir = '../images/';
-$target_file = $target_dir.$_FILES['image']['name'];
+$filename = $_FILES['image']['name'];
+$target_file = $target_dir.$filename;
 $temp_file = $_FILES['image']['tmp_name'];
+ECHO "<br>";
+// strToLower();
+
+//file_exists('file path') this function check file is exists or not
+echo file_exists($target_file);
+if(file_exists($target_file)){
+    echo "file already exists";
+}else{
+    echo "file is not already exists";
+}
+
+//using pathinfo('file path', PATHINFO_EXTENSTION) function you can find extension of your file
+
+ECHO "<br>";
+$fielExtension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+
+ECHO "<br>";
 // echo $temp_file;
-move_uploaded_file($temp_file, $target_file);
+echo $fielExtension;
+if($_FILES['image']['size'] > 1024000){
+    echo "image size should be less than 1MB";
+}else{
+    if($fielExtension == "jpg" || $fielExtension == "png" || $fielExtension == "jpeg"){
+        move_uploaded_file($temp_file, $target_file);
+        echo "image uploaded successfully";
+    }else{
+        echo "file type should either jpg, png, jpeg format<br> but you have uploaded $fielExtension";
+    }
+}
+
 
 
 
