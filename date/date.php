@@ -20,6 +20,6 @@ echo date('d/m/y h:m:s');
 echo "<br>";
 echo date('m/d/y');
 echo "<br>";
-echo date('h:m:s');
+echo date('h:m:sA');
 
 ?>

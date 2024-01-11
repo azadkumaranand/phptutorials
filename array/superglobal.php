@@ -5,6 +5,11 @@ $y = 45;
 
 $z = 145;
 
+include "../date/test1.php";
+require "../date/test2.php";
+include "../date/test3.php";//jab file nahi milega then ye sirf warning dega
+require "../date/test3.php";//jab file nahi milega then ye fatal error dega jiske age ka code nhi chlega
+echo "<br>";
 
 echo $GLOBALS['x']."<br>";
 echo $GLOBALS['y']."<br>";
@@ -73,12 +78,6 @@ if($_FILES['image']['size'] > 1024000){
     }
 }
 
-
-
-
-
-
-
 /*
 1MB = 1024KB = 1024000B
 
@@ -119,5 +118,9 @@ if($_FILES['image']['size'] > 1024000){
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        //AJAX
+
+    </script>
   </body>
 </html>
