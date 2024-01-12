@@ -8,7 +8,7 @@ $z = 145;
 include "../date/test1.php";
 require "../date/test2.php";
 include "../date/test3.php";//jab file nahi milega then ye sirf warning dega
-require "../date/test3.php";//jab file nahi milega then ye fatal error dega jiske age ka code nhi chlega
+// require "../date/test3.php";//jab file nahi milega then ye fatal error dega jiske age ka code nhi chlega
 echo "<br>";
 
 echo $GLOBALS['x']."<br>";
